@@ -24,7 +24,8 @@ fibs2 = 0 : 1 : (doit fibs2)
       where
         doit allf@(x:y:_) = (x + y) : doit (tail allf)
 
-             
+fibs2way :: [Integer]
+fibs2way = 0 : 1 : (zipWith (\x y -> x + y) fibs2way (tail fibs2way))             
 
 -- Exercise 3 -----------------------------------------
 
